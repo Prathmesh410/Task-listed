@@ -1,5 +1,5 @@
 import React from 'react'
-import InfoCardWrapper from '../Dashboard/InfoCardWrapper'
+import InfoCardWrapper from './Dashboard/InfoCardWrapper'
 import Sidebar from './Sidebar/Sidebar'
 
 function HomePage() {
