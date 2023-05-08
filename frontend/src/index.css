@@ -4,3 +4,6 @@
 *{
   font-family: 'Inter', sans-serif;
 }
+.example::-webkit-scrollbar {
+  display: none;
+}

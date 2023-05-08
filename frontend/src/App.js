@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       {/* <SigninPage/> */}
-      <HomePage/>
+      <HomePage className="overflow-y-hidden" />
     </div>
   );
 }
