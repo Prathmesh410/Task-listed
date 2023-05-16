@@ -8,7 +8,7 @@ function SigninPage() {
       text-6xl font-bold">
       Board.
     </div>
-    <div className="w-2/3 h-screen flex items-center justify-center bg-gray-200">
+    <div className="w-2/3 h-screen flex items-center justify-center bg-gray-100">
    <Signin />
     </div>
   </div>

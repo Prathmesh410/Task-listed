@@ -1,5 +1,4 @@
 import React from 'react'
-import {VscDashboard} from 'react-icons/vsc'
 function SidebarItem({icon,title}) {
   return (
     <div className='w-8/12 h-6 flex items-center text-white  my-5'>
