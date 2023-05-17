@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import React, { useState } from 'react'
 import { auth } from '../firebase'
+import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -9,6 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 function SigninForm({register,setRegister}) {
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
+  const [secondPassword,setSecondPassword] = useState("");
+  const navigate = useNavigate();
 
 
   const ReEnterPassword = () => {
@@ -18,7 +21,7 @@ function SigninForm({register,setRegister}) {
               <input type="password"
                className="bg-gray-100 border
                  rounded-lg w-full h-10 px-2 mt-2 outline-none" 
-                placeholder="Enter your password"/> 
+                placeholder="Enter your password" onChange={(e) =>setSecondPassword(e.target.value)}/>    
       </div>
     )
   }
@@ -26,11 +29,13 @@ function SigninForm({register,setRegister}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(password !== secondPassword) return toast("password don't match")
     if(register){
+      
       createUserWithEmailAndPassword(auth,email,password)
       .then((data) =>{
         console.log(data);
-        toast.success('Sign-up successful!');
+        toast('Sign-up successful!');
         setRegister(false)
       }).catch((error)=>{
         toast.success(error?.code);
@@ -38,8 +43,10 @@ function SigninForm({register,setRegister}) {
       
     }
     else {
+      
       signInWithEmailAndPassword(auth, email,password).then((data) => {
         toast("Sign-in successful!")
+        navigate('/home');
       })
       .catch((error) => {
         toast.success(error?.code);
@@ -69,15 +76,15 @@ function SigninForm({register,setRegister}) {
              className="bg-gray-100 border
                rounded-lg w-full h-10 px-2 mt-2 outline-none" 
               placeholder="Enter your password" onChange={(e) =>setPassword(e.target.value)}/>
-            {register && ReEnterPassword()}  
-
+            {register && ReEnterPassword()}
+             
              <div className="bg-black border
                rounded-lg w-full h-10 px-2 mt-6 text-white justify-center 
-               items-center text-center cursor-pointer" 
-               onClick={handleSubmit}>{register ? 'Sign up' : 'Sign in'}</div>
+               items-center text-center cursor-pointer pt-2 font-medium" 
+               onClick={handleSubmit} >{register ? 'Sign up' : 'Sign in'}</div>
         </div>
     </div>
   )
 }
 
-export default SigninForm
+export default SigninForm;

@@ -21,7 +21,8 @@ function Signin() {
       console.log(user);
     });
   };
-  const handleResister = () =>{
+  const handleResister = (e) =>{
+   
     setRegister(true);
   }
   console.log(register);
@@ -55,7 +56,7 @@ function Signin() {
       </div>
         <SigninForm register = {register} setRegister = {setRegister}/>
         <div className='flex mt-6 item-center justify-center' > 
-          <p className="font-small text-base leading-5 font-light text-gray-600">Don't have an account?</p>
+          <p className="font-small text-base leading-5 font-light text-gray-600" > have an account?</p>
           <p className="font-small text-base leading-5 font-light text-blue-600 ml-1 cursor-pointer" onClick={handleResister}>Register here</p>
         </div>
     </div>
