@@ -1,24 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { auth, provider } from "../firebase";
 import { signInWithPopup } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
 import { GrApple } from "react-icons/gr";
 import SigninForm from "./SigninForm";
+import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 function Signin() {
   const [user, setUser] = useState("");
   const [register,setRegister] = useState(false);
+  const navigate = useNavigate();
 
 
   useEffect(() => {
-    setUser(localStorage.getItem("email"));
-  }, []);
+    {user !== null? navigate('/') : navigate('/signin')}
+  }, [user]);
 
-
+  useMemo(() => setUser(localStorage.getItem("email"))
+  , [])  
   const handleClick = () => {
     signInWithPopup(auth, provider).then((data) => {
       setUser(data.user.email);
       localStorage.setItem("email", data.user.email);
-      console.log(user);
     });
   };
   const handleResister = (e) =>{
@@ -54,7 +57,7 @@ function Signin() {
          font-normal text-sm">Sign in with Apple</p>
         </div>
       </div>
-        <SigninForm register = {register} setRegister = {setRegister}/>
+        <SigninForm register = {register} setRegister = {setRegister} setUser = {setUser}/>
         <div className='flex mt-6 item-center justify-center' > 
           <p className="font-small text-base leading-5 font-light text-gray-600" > have an account?</p>
           <p className="font-small text-base leading-5 font-light text-blue-600 ml-1 cursor-pointer" onClick={handleResister}>Register here</p>

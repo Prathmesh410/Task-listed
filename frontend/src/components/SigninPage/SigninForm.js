@@ -1,17 +1,16 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
 import React, { useState } from 'react'
 import { auth } from '../firebase'
-import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 
-function SigninForm({register,setRegister}) {
+function SigninForm({register,setRegister,setUser}) {
   const [email,setEmail] = useState("");
   const [password,setPassword] = useState("");
   const [secondPassword,setSecondPassword] = useState("");
-  const navigate = useNavigate();
+  
 
 
   const ReEnterPassword = () => {
@@ -29,12 +28,10 @@ function SigninForm({register,setRegister}) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(password !== secondPassword) return toast("password don't match")
     if(register){
-      
+      if(password !== secondPassword) return toast("password don't match")
       createUserWithEmailAndPassword(auth,email,password)
       .then((data) =>{
-        console.log(data);
         toast('Sign-up successful!');
         setRegister(false)
       }).catch((error)=>{
@@ -46,7 +43,8 @@ function SigninForm({register,setRegister}) {
       
       signInWithEmailAndPassword(auth, email,password).then((data) => {
         toast("Sign-in successful!")
-        navigate('/home');
+      
+        setUser(data.user.email);
       })
       .catch((error) => {
         toast.success(error?.code);

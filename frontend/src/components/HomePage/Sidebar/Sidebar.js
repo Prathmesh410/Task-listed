@@ -7,7 +7,7 @@ import Icon4 from "./SidebarIcons/SidebarIcon4.svg"
 import Icon5 from "./SidebarIcons/SidebarIcon5.svg"
 function Sidebar() {
   return (
-    <div className='h-screen bg-black text-white w-2/12 rounded-3xl flex flex-col items-center' >
+    <div className='h-screen bg-black text-white w-2/12 rounded-3xl flex flex-col items-center shadow-sm' >
       <h3 className='text-4xl font-bold leading-10 my-10 '>Board.</h3>
       <SidebarItem title="Dashboard" icon={Icon1}/>
       <SidebarItem title="Transactions" icon={Icon2}/>
