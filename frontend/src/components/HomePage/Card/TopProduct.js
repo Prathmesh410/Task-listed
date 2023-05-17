@@ -6,7 +6,7 @@ function TopProduct() {
   return (
     <Card >
         <p>Top products</p>
-        <PieChart />
+        <PieChart/>
 
     </Card>
   )

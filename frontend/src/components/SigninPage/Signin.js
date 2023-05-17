@@ -6,9 +6,13 @@ import { GrApple } from "react-icons/gr";
 import SigninForm from "./SigninForm";
 function Signin() {
   const [user, setUser] = useState("");
+  const [register,setRegister] = useState(false);
+
+
   useEffect(() => {
     setUser(localStorage.getItem("email"));
   }, []);
+
 
   const handleClick = () => {
     signInWithPopup(auth, provider).then((data) => {
@@ -17,13 +21,16 @@ function Signin() {
       console.log(user);
     });
   };
-
+  const handleResister = () =>{
+    setRegister(true);
+  }
+  console.log(register);
   return (
-    <div className="border-2 max-w-500 flex flex-col">
-      <h3 className="font-bold text-4xl leading-11 tracking-wide">Sign In</h3>
-      <p className="font-normal text-base leading-5 mt-1">Sign In to your account</p>
+    <div className="max-w-500 ">
+      <h3 className="font-bold text-4xl leading-11 tracking-wide">{register ? 'Sign up' : 'Sign in'}</h3>
+      <p className="font-normal text-base leading-5 mt-1">{register ? 'Sign up ' : 'Sign in '}to your account</p>
       <div className="flex justify-between mt-6">
-        <div className="rounded-lg h-8 w-48 bg-white shadow-sm
+        <div className="rounded-xl h-8 w-48 bg-white shadow-sm
           mr-3 flex items-center justify-center cursor-pointer"
           onClick={handleClick}
         >
@@ -37,7 +44,7 @@ function Signin() {
           </p>
         </div>
         <div
-          className="rounded-lg h-8 w-48 bg-white shadow-sm ml-3 flex items-center justify-center cursor-pointer"
+          className="rounded-xl h-8 w-48 bg-white shadow-sm ml-3 flex items-center justify-center cursor-pointer"
           onClick={handleClick}
         >
           <GrApple className="text-lg text-gray-400"/>
@@ -46,10 +53,10 @@ function Signin() {
          font-normal text-sm">Sign in with Apple</p>
         </div>
       </div>
-        <SigninForm/>
-        <div className='flex mt-6 item-center justify-center'>
+        <SigninForm register = {register} setRegister = {setRegister}/>
+        <div className='flex mt-6 item-center justify-center' > 
           <p className="font-small text-base leading-5 font-light text-gray-600">Don't have an account?</p>
-          <p className="font-small text-base leading-5 font-light text-blue-600 ml-1 cursor-pointer">Register here</p>
+          <p className="font-small text-base leading-5 font-light text-blue-600 ml-1 cursor-pointer" onClick={handleResister}>Register here</p>
         </div>
     </div>
     
