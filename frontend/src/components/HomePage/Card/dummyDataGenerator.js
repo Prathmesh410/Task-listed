@@ -4,7 +4,7 @@ const months = [
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
 const currentDate = new Date();
-export function generateDummyData  () {
+export function generatePieDummyData  () {
     const pieData = [];
     for(let i = 0;i <3;i++){
         let month = currentDate.getMonth()-i;
@@ -27,4 +27,29 @@ export function generateDummyData  () {
     }
 return pieData;
 }
+
+export function generateActivityDummyData (){
+    const activityData = [];
+    for(let i = 0;i <3;i++){
+        let month = currentDate.getMonth()-i;
+        let year = currentDate.getFullYear();
+    
+        if (month < 1) {
+          month += 12;
+          year -= 1;
+        }
+        
+        let date = {month:months[month] , year : year};
+        const weekData = [];
+        for (let j = 1; j <= 4; j++) {
+
+            const week = `week ${j}`
+            const value = faker.number.int({ min: 100, max: 500 });
+            weekData.push({ week:week , value:value });
+          }
+          activityData.push({ month: date, weekData });
+        }    
+        return activityData;
+}
+
 

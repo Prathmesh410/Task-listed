@@ -1,7 +1,7 @@
 import React from 'react'
-import TopProduct from './Card/TopProduct'
 import InfoCardWrapper from './Dashboard/InfoCardWrapper'
 import Sidebar from './Sidebar/Sidebar'
+import PieChart from './Card/Pie'
 
 function HomePage() {
   return (
@@ -11,7 +11,7 @@ function HomePage() {
       <div className='w-10/12 pl-12 border-3'>
       <InfoCardWrapper className = 'h-3/6' />
       <div className='flex justify-between'>
-        <TopProduct  />
+        <PieChart/>
       </div>
       </div>
       </div>

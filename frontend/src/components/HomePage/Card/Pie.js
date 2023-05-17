@@ -1,12 +1,20 @@
 import ReactEcharts from 'echarts-for-react';
-import  { generateDummyData } from './dummyDataGenerator'
-
-const pieData = generateDummyData();
-
+import Card from './Card';
+import  { generatePieDummyData } from './dummyDataGenerator'
+const pieData = generatePieDummyData();
 console.log(pieData);
 
 const colors = ["#98D89E" ,"#EE8484" ,"#F6DC7D"];
 const option = {
+  title: {
+    text: 'Top products',
+    left: 'left',
+    textStyle: {
+      fontSize: 20,
+      fontWeight: 900,
+      color:'#000000',
+    }
+  },
   tooltip: {},
   legend: {
     orient: 'vertical',
@@ -26,7 +34,7 @@ const option = {
     },
     formatter: function (name) {
       const item = pieData[0].topProducts.find((item) => item.name === name);
-      return ` ${name} \n(${item.value}%)`;
+      return ` ${name} \n\t${item.value}%`;
     },
 
 
@@ -58,7 +66,9 @@ const option = {
 
 const PieChart = () => {
   return (
+    <Card>
     <ReactEcharts option={option}  />
+    </Card>
   );
 };
 
