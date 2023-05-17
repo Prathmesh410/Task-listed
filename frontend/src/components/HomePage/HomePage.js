@@ -10,9 +10,8 @@ function HomePage() {
       <Sidebar />
       <div className='w-10/12 pl-12 border-3'>
       <InfoCardWrapper className = 'h-3/6' />
-      <div className='flex'>
+      <div className='flex justify-between'>
         <TopProduct  />
-        <TopProduct />
       </div>
       </div>
       </div>
