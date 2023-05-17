@@ -2,7 +2,6 @@ import ReactEcharts from 'echarts-for-react';
 import Card from './Card';
 import  { generatePieDummyData } from './dummyDataGenerator'
 const pieData = generatePieDummyData();
-console.log(pieData);
 
 const colors = ["#98D89E" ,"#EE8484" ,"#F6DC7D"];
 const option = {

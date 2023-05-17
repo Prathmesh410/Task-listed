@@ -44,8 +44,9 @@ export function generateActivityDummyData (){
         for (let j = 1; j <= 4; j++) {
 
             const week = `week ${j}`
-            const value = faker.number.int({ min: 100, max: 500 });
-            weekData.push({ week:week , value:value });
+            const userActivity = faker.number.int({ min: 100, max: 500 });
+            const guestActivity = faker.number.int({ min: 100, max: 500 });
+            weekData.push({ week:week , userActivity:userActivity , guestActivity:guestActivity});
           }
           activityData.push({ month: date, weekData });
         }    
