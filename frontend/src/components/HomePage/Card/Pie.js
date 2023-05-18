@@ -10,14 +10,14 @@ const option = {
     left: 'left',
     textStyle: {
       fontSize: 20,
-      fontWeight: 900,
+      fontWeight: 700,
       color:'#000000',
     }
   },
   tooltip: {},
   legend: {
     orient: 'vertical',
-    left: '50%',
+    left: '20%',
     top:'20%',
     itemWidth: 10,
     itemHeight: 25,
@@ -42,7 +42,8 @@ const option = {
   series: [
     {
       type: 'pie',
-      right: '60%',
+      left:"0%",
+      right:"80%",
       data: pieData[0].topProducts,colors,
       label: {
         show: false,
@@ -65,7 +66,7 @@ const option = {
 
 const PieChart = () => {
   return (
-    <Card className="m-3 w-fit">
+    <Card >
     <ReactEcharts option={option}  />
     </Card>
   );

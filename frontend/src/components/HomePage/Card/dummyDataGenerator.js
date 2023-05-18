@@ -65,7 +65,7 @@ export function generateTaskDummyData(count) {
   const taskTitle = [
     "Complete report", "Send invitations", "Research competitors", "Update social media", "Schedule meeting", "Approve vacation requests", "Create presentation", "Organize documents", "Follow up with customers", "Attend workshop"
   ];
-  const colors = ["#DEE0EF","#EFDADA","#F4ECDD","#DDEFE0"];
+  const colors = ["#7786f3","#f77a7a","#f8cd7c","#7ff593"];
 
   const tasks = [];
 
