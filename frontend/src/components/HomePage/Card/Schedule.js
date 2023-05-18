@@ -1,0 +1,34 @@
+import React from 'react'
+import { faker } from '@faker-js/faker';
+import Card from './Card'
+import { generateTaskDummyData } from './dummyDataGenerator'
+const count =  faker.number.int({min:2,max:10});
+const taskData = generateTaskDummyData(count);
+console.log(taskData);
+
+function Schedule() {
+  return (
+    <Card className="w-fit">
+          <p className='font-bold text-xl leading-6 mb-8'>Today's Schedule</p>
+          <div className='w-full h-2/5 flex mb-2'>
+            <div className='bg-black w-1 h-full'></div>  
+            <div className='w-full'>
+              <div className=''>this is the task</div>
+              <div className=''>14:00 - 20.00</div>
+              <div className=''>at Sunset Road</div>
+            </div>
+        </div>
+          <div className='w-full h-2/5 flex mb-2'>
+            <div className='bg-black w-1 h-full'></div>  
+            <div className='w-full'>
+              <div className=''>this is the task</div>
+              <div className=''>14:00 - 20.00</div>
+              <div className=''>at Sunset Road</div>
+            </div>
+        </div>
+    
+    </Card>
+  )
+}
+
+export default Schedule

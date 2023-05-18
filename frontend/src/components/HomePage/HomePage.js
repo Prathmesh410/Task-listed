@@ -3,6 +3,7 @@ import InfoCardWrapper from './Dashboard/InfoCardWrapper'
 import Sidebar from './Sidebar/Sidebar'
 import PieChart from './Card/Pie'
 import Activity from './Card/Activity'
+import Schedule from './Card/Schedule'
 
 function HomePage() {
   return (
@@ -11,13 +12,13 @@ function HomePage() {
       <Sidebar />
       <div className='w-10/12 pl-12 border-3'>
       <InfoCardWrapper className = 'h-3/6' />
-      <div className='flex justify-between'>
-      {/* <Activity/> */}
-        <PieChart/>
+      <Activity/>
+      <div className='flex justify-between mt-0'>
+        <PieChart />
+        <Schedule />
+        </div>
       </div>
       </div>
-      </div>
-    
   )
 }
 

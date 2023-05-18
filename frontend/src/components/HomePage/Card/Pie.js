@@ -65,7 +65,7 @@ const option = {
 
 const PieChart = () => {
   return (
-    <Card>
+    <Card className="m-3 w-fit">
     <ReactEcharts option={option}  />
     </Card>
   );

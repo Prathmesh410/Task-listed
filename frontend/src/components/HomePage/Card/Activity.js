@@ -21,7 +21,6 @@ const option = {
           fontStyle: 'normal',
           fontWeight: 400,
           fontSize: 14,
-          lineHeight: 17,
         },
       }  
     },
@@ -38,14 +37,14 @@ const option = {
           fontStyle: 'normal',
           fontWeight: 400,
           fontSize: 14,
-          lineHeight: 17,
         },
       }
     },
     legend: {
         data: ['user','guest'],
-        orient: 'vertical',
-        right: 20,
+        orient: 'horizontal',
+        right: "50%",
+        bottom:"50%",
         itemWidth: 10,
         itemHeight: 10,
         formatter: function (name) {
@@ -66,14 +65,22 @@ const option = {
         color:"#9BDD7C"
 
       }
-    ]
+    ],
+    grid: {
+        left: '2%',
+        right: '2%',
+        top: '4%',
+        bottom:'4%',
+        containLabel: true,
+      }
+    
   };
 
 
 const ActivityChart = () => {
     return (
-        <Card>
-        <ReactEcharts option={option}  />
+        <Card >
+        <ReactEcharts option={option} />
         </Card>
     );
   };

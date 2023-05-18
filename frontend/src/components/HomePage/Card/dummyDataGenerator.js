@@ -54,3 +54,45 @@ export function generateActivityDummyData (){
 }
 
 
+export function generateTaskDummyData(count) {
+  function generateRandomDuration() {
+    const startHour = faker.number.int({ min: 0, max: 23 });
+    const endHour = startHour + 1;
+    const duration = `${startHour.toString().padStart(2, '0')}-${endHour.toString().padStart(2, '0')}`;
+  
+    return duration;
+  }
+  const taskTitle = [
+    "Complete report", "Send invitations", "Research competitors", "Update social media", "Schedule meeting", "Approve vacation requests", "Create presentation", "Organize documents", "Follow up with customers", "Attend workshop"
+  ];
+  const colors = ["#DEE0EF","#EFDADA","#F4ECDD","#DDEFE0"];
+
+  const tasks = [];
+
+  for (let i = 0; i < count; i++) {
+    const num = faker.number.int({min:0,max:9});
+    const colorNum = faker.number.int({min:0,max:3});
+    const color = colors[colorNum];
+    const title = taskTitle[num];
+    const duration = generateRandomDuration();
+    const location = faker.location.streetAddress()
+
+    const task = {
+      color,
+      title,
+      duration,
+      location,
+    };
+
+    tasks.push(task);
+  }
+
+  return tasks;
+}
+
+
+
+
+
+
+
