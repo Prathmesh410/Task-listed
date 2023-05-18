@@ -15,7 +15,7 @@ function HomePage() {
       <Activity/>
       <div className='flex justify-between mt-0'>
         <PieChart />
-        {/* <Schedule /> */}
+        <Schedule />
         </div>
       </div>
       </div>
