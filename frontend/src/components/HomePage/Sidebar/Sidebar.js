@@ -8,7 +8,7 @@ import Icon5 from "./SidebarIcons/SidebarIcon5.svg"
 import './Sidebar.css'
 function Sidebar() {
   return (
-    <div className=' bg-black text-white w-2/12 rounded-3xl flex flex-col items-center shadow-sm sidebar' >
+    <div className=' bg-black text-white w-1/5  rounded-3xl flex flex-col items-center shadow-sm sidebar' >
       <h3 className='text-4xl font-black leading-10 my-10 sidebar-text'>Board.</h3>
       <SidebarItem title="Dashboard" icon={Icon1}/>
       <SidebarItem title="Transactions" icon={Icon2}/>

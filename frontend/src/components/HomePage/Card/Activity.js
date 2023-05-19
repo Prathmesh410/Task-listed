@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import  { generateActivityDummyData } from './dummyDataGenerator'
 import ReactEcharts from 'echarts-for-react';
 import Card from './Card';
+import Dropdown from './DropDown';
 const activityData = generateActivityDummyData();
+console.log(activityData);
 const userActivityData = activityData[0].weekData.map(weekData => weekData.userActivity);
 const guestActivityData = activityData[0].weekData.map(weekData => weekData.guestActivity);
 
+
+
 const option = {
+  title: {
+    text: 'Activities',
+    textStyle: {
+      fontSize: 20,
+      fontWeight: 700,
+      color:'#000000',
+    }
+  },
     xAxis: {
       type: 'category',
       data: ['week 1','week 2','week 3','week 4'],
@@ -40,36 +52,33 @@ const option = {
         },
       }
     },
-    legend: {
-        data: ['user','guest'],
-        orient: 'horizontal',
-        right: "50%",
-        bottom:"50%",
-        itemWidth: 10,
-        itemHeight: 10,
-        formatter: function (name) {
-            return `${name}`
-        }
-    },
     series: [
+  
       {
+        lineStyle: {
+          width: 3,
+        },
         data: userActivityData,
         type: 'line',
         smooth: true,
-        color:"#E9A0A0"
+        color:"#E9A0A0",
+        showSymbol: false,
       },
       {
+        lineStyle: {
+          width: 3,
+        },
         data: guestActivityData,
         type: 'line',
         smooth: true,
-        color:"#9BDD7C"
+        color:"#9BDD7C",
+        showSymbol: false,
 
       }
     ],
     grid: {
         left: '2%',
         right: '2%',
-        top: '4%',
         bottom:'4%',
         containLabel: true,
       }
@@ -78,8 +87,19 @@ const option = {
 
 
 const ActivityChart = () => {
+  const [selectedMonth,setSelectedMonth] = useState("");
+  const [months,setMonths] = useState([]);
+
+  
     return (
         <Card >
+          <span className='absolute mt-5'><Dropdown /></span>
+          <span className='absolute right-0 mr-8 mt-5 flex align-middle '>
+            <div className='activity-legendl-dots rounded-full mr-4 ' style={{background:"#E9A0A0"}}></div>
+            <div className='font-normal text-base mr-8'>User</div>
+            <div className='activity-legendl-dots rounded-full mr-4' style={{background:"#9BDD7C"}}></div>
+            <div>Guest</div>
+          </span>
         <ReactEcharts option={option} />
         </Card>
     );

@@ -1,5 +1,6 @@
 import ReactEcharts from 'echarts-for-react';
 import Card from './Card';
+import "./Card.css"
 import  { generatePieDummyData } from './dummyDataGenerator'
 const pieData = generatePieDummyData();
 
@@ -7,7 +8,6 @@ const colors = ["#98D89E" ,"#EE8484" ,"#F6DC7D"];
 const option = {
   title: {
     text: 'Top products',
-    left: 'left',
     textStyle: {
       fontSize: 20,
       fontWeight: 700,
@@ -17,12 +17,8 @@ const option = {
   tooltip: {},
   legend: {
     orient: 'vertical',
-    left: '20%',
-    top:'20%',
-    itemWidth: 10,
-    itemHeight: 25,
-    itemGap:30,
-    icon: 'circle',
+    right: 10,
+    top: 'middle',
     
     textStyle: {
       fontSize: 12,
@@ -42,18 +38,19 @@ const option = {
   series: [
     {
       type: 'pie',
-      left:"0%",
-      right:"80%",
+      radius:"50%",
+      left:"0",
+      right:'40%',
       data: pieData[0].topProducts,colors,
       label: {
         show: false,
       },
-      emphasis: {
-        label: {
-          show: true,
-          formatter: '{b}: {d}%',
-        },
-      },
+      // emphasis: {
+      //   label: {
+      //     show: true,
+      //     formatter: '{b}: {d}%',
+      //   },
+      // },
       itemStyle: {
         color: function (params) {
           const dataIndex = params.dataIndex % colors.length;
@@ -66,7 +63,8 @@ const option = {
 
 const PieChart = () => {
   return (
-    <Card >
+    <Card className = 'card flex'>
+      <span className=''>Data</span>
     <ReactEcharts option={option}  />
     </Card>
   );
