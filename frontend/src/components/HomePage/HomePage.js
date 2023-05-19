@@ -5,26 +5,22 @@ import PieChart from './Card/Pie'
 import Activity from './Card/Activity'
 import Schedule from './Card/Schedule'
 import "./homepage.css"
-import Dropdown from './Card/DropDown'
 
 function HomePage() {
   return (
     
-    // <div className='p-12 flex justify-between bg-gray-100'>
-    //   <Sidebar />
-    //   <div className='w-10/12 pl-12 border-3'>
-    //   <InfoCardWrapper className = 'h-3/6' />
-    //   <Activity/>
-    //   <div className='flex justify-around w-full'>
-    //     <div className='w-1/2 pr-5'><PieChart/></div>
-    //     <div className='w-1/2 pl-5'><Schedule/></div>
-    //     </div>
-    //   </div>
-    //   </div>
-    <div>
-      <Dropdown/>
+    <div className='p-12 flex justify-between bg-gray-100'>
+      <Sidebar />
+      <div className='w-10/12 pl-12 border-3'>
+      <InfoCardWrapper className = 'h-3/6' />
       <Activity/>
-    </div>
+      <div className='flex justify-around w-full'>
+        <div className='w-1/2 pr-5'><PieChart/></div>
+        <div className='w-1/2 pl-5'><Schedule/></div>
+        </div>
+      </div>
+      </div>
+    
   )
 }
 

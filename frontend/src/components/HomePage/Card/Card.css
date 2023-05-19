@@ -34,6 +34,7 @@
   }
   
   .dropdown-menu p {
+    cursor: pointer;
     margin: 0;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
@@ -41,7 +42,7 @@
   }
   .activity-legendl-dots{
     margin-top: 0.4rem;
-    width: 0.7rem;
-    height: 0.7rem;
+    width: 0.6rem;
+    height: 0.6rem;
     
   }
