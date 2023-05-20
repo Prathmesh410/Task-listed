@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {RiArrowDropDownLine} from "react-icons/ri"
 import "./Card.css";
 
-const Dropdown = ({months,setSelectedMonth}) => {
+const Dropdown = ({months,setSelectedMonth ,selectedMonth}) => {
     const [isOpen, setIsOpen] = useState(false);
     
     const toggleDropdown = () => {
@@ -17,7 +17,7 @@ const Dropdown = ({months,setSelectedMonth}) => {
     return (
       <div className="dropdown-container">
         <button className="dropdown-button" onClick={toggleDropdown}>
-          Dropdown <RiArrowDropDownLine className="dropdown-icon" />
+        {months[selectedMonth]}<RiArrowDropDownLine className="dropdown-icon" />
         </button>
         {isOpen && (
           <div className="dropdown-menu">

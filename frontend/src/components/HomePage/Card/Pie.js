@@ -1,11 +1,22 @@
 import ReactEcharts from 'echarts-for-react';
+import { useState } from 'react';
 import Card from './Card';
 import "./Card.css"
 import Dropdown from './DropDown';
 import  { generatePieDummyData } from './dummyDataGenerator';
 const pieData = generatePieDummyData();
 
-const colors = ["#98D89E" ,"#EE8484" ,"#F6DC7D"];
+
+const PieChart = () => {
+  const colors = ["#98D89E" ,"#EE8484" ,"#F6DC7D"];
+  
+  const [selectedMonth,setSelectedMonth] = useState('0');
+  const cur = pieData[selectedMonth]
+  const months = [];
+  pieData.map(data => {
+    months.push(`${data?.month?.month} ${data?.month?.year}`);
+})
+
 const option = {
   title: {
     text: 'Top products',
@@ -28,7 +39,7 @@ const option = {
       lineHeight: 17,
     },
     formatter: function (name) {
-      const item = pieData[0].topProducts.find((item) => item.name === name);
+      const item = cur.topProducts.find((item) => item.name === name);
       return ` ${name} \n\t${item.value}%`;
     },
 
@@ -41,7 +52,7 @@ const option = {
       radius:"50%",
       left:"0",
       right:'40%',
-      data: pieData[0].topProducts,colors,
+      data: cur.topProducts,colors,
       label: {
         show: false,
       },
@@ -59,12 +70,10 @@ const option = {
       },
     },
   ],
-};
-
-const PieChart = () => {
+  };
   return (
     <Card className = 'card flex'>
-     <span className='absolute  mr-12 mt-5 flex align-middle '>data</span>
+     <span className='absolute  pie-dropdown'><Dropdown  months = {months} setSelectedMonth = {setSelectedMonth} selectedMonth = {selectedMonth}/></span>
 
     <ReactEcharts option={option} className = 'max-h-60' />
     </Card>

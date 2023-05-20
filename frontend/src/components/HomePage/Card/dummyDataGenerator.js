@@ -6,11 +6,11 @@ const months = [
 const currentDate = new Date();
 export function generatePieDummyData  () {
     const pieData = [];
-    for(let i = 0;i <3;i++){
+    for(let i = 0;i <6;i++){
         let month = currentDate.getMonth()-i;
         let year = currentDate.getFullYear();
     
-        if (month < 1) {
+        if (month < 0) {
           month += 12;
           year -= 1;
         }

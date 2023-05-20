@@ -4,9 +4,6 @@ import ReactEcharts from 'echarts-for-react';
 import Card from './Card';
 import Dropdown from './DropDown';
 const activityData = generateActivityDummyData();
-console.log(activityData);
-
-
 
 
 
@@ -14,7 +11,6 @@ const ActivityChart = () => {
   const [selectedMonth,setSelectedMonth] = useState('0');
   const cur = activityData[selectedMonth];
   const months = [];
-  console.log("curr is " , cur);
   const userActivityData = cur.weekData.map(weekData => weekData.userActivity);
   const guestActivityData = cur.weekData.map(weekData => weekData.guestActivity);
   const option = {
@@ -96,11 +92,10 @@ const ActivityChart = () => {
   activityData.map(data => {
         months.push(`${data?.month?.month} ${data?.month?.year}`);
   })
-      // console.log(months);
-console.log(selectedMonth);
+
     return (
         <Card >
-          <span className='absolute mt-6 mb'><Dropdown months = {months} setSelectedMonth = {setSelectedMonth}/></span>
+          <span className='absolute mt-6 mb'><Dropdown months = {months} setSelectedMonth = {setSelectedMonth} selectedMonth = {selectedMonth}/></span>
           <span className='absolute right-10 mr-12 mt-5 flex align-middle '>
             <div className='activity-legendl-dots rounded-full mr-3 ' style={{background:"#E9A0A0"}}></div>
             <div className='font-normal text-base mr-8'>User</div>
