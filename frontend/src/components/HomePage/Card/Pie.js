@@ -4,6 +4,8 @@ import Card from './Card';
 import "./Card.css"
 import Dropdown from './DropDown';
 import  { generatePieDummyData } from './dummyDataGenerator';
+import {TbMathGreater} from "react-icons/tb"
+
 const pieData = generatePieDummyData();
 
 
@@ -18,14 +20,7 @@ const PieChart = () => {
 })
 
 const option = {
-  title: {
-    text: 'Top products',
-    textStyle: {
-      fontSize: 20,
-      fontWeight: 700,
-      color:'#000000',
-    }
-  },
+
   tooltip: {},
   legend: {
     orient: 'vertical',
@@ -73,7 +68,10 @@ const option = {
   };
   return (
     <Card className = 'card flex'>
-     <span className='absolute  pie-dropdown'><Dropdown  months = {months} setSelectedMonth = {setSelectedMonth} selectedMonth = {selectedMonth}/></span>
+      <div className='flex justify-between'>
+          <div>Top Products</div>
+          <div className='flex mr-7'><Dropdown months = {months} setSelectedMonth = {setSelectedMonth} selectedMonth = {selectedMonth} /></div>
+         </div>
 
     <ReactEcharts option={option} className = 'max-h-60' />
     </Card>

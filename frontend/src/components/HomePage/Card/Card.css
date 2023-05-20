@@ -50,3 +50,14 @@
     right : 45%;
   }
  
+  .schedule-dropdown-container{
+    position: absolute;
+    top:0;
+    right: 8%;
+    width: fit-content;
+    height: fit-content;
+    background-color:#F3F4F6 ;
+    border-radius: 0.8rem;
+    border: 1px solid #e1e0e0;
+    z-index: 10;
+  }

@@ -6,7 +6,7 @@ function InfoCard({color,title,value,icon}) {
       <p className='pt-4 font-normal  leading-6 pb-1'>{title}</p>
       <p className='font-bold text-2xl leading-8'>{value}</p>
         </div>
-      <img src={icon} alt="icon img"  className='mr-4 h-6 mt-3'/>
+      <img src={icon} alt="icon img"  className='mr-4 h-6 mt-3 '/>
     </div>
   )
 }
