@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef,useEffect } from "react";
 import { faker } from "@faker-js/faker";
 import Card from "./Card";
 import { generateTaskDummyData } from "./dummyDataGenerator";
@@ -10,13 +10,17 @@ console.log(taskData);
 
 function Schedule() {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
+
+  
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
+ 
+ 
   return (
-    <Card className="card">
+    <Card className="card" >
       <div className="flex justify-between " onClick={toggleDropdown}>
         <div>Today's Schedule</div>
         <div className="flex">
@@ -60,10 +64,10 @@ function Schedule() {
       </div>
 
         {isOpen && (
-         <div className="schedule-dropdown-container p-8">
+         <div className="schedule-dropdown-container p-8 ">
          {taskData.map(task =>{
            return(
-            <div className="w-full h-20 flex mb-2 bg-white rounded-r-lg pr-3">
+            <div className="w-full h-20 flex mb-3 bg-white rounded-r-lg pr-3 hover:bg-gray-100 ">
            <div key={task.title}
              className="w-1 rounded-sm  "
              style={{ background: `${task.color}` }}
