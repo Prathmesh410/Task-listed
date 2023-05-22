@@ -14,15 +14,7 @@ const ActivityChart = () => {
   const userActivityData = cur.weekData.map(weekData => weekData.userActivity);
   const guestActivityData = cur.weekData.map(weekData => weekData.guestActivity);
   const option = {
-    title: {
-      text: 'Activities',
-      top: '0px',
-      textStyle: {
-        fontSize: 20,
-        fontWeight: 700,
-        color:'#000000',
-      }
-    },
+  
       xAxis: {
         type: 'category',
         data: ['week 1','week 2','week 3','week 4'],
@@ -81,9 +73,10 @@ const ActivityChart = () => {
         }
       ],
       grid: {
-          left: '2%',
-          right: '2%',
-          bottom:'4%',
+          left: '1%',
+          top:'10%',
+          right: '0%',
+          bottom:'0%',
           containLabel: true,
         }
       
@@ -95,14 +88,20 @@ const ActivityChart = () => {
 
     return (
         <Card >
-          <span className='absolute mt-6 mb'><Dropdown months = {months} setSelectedMonth = {setSelectedMonth} selectedMonth = {selectedMonth}/></span>
-          <span className='absolute right-10 mr-12 mt-5 flex align-middle '>
-            <div className='activity-legendl-dots rounded-full mr-3 ' style={{background:"#E9A0A0"}}></div>
+        <div className='flex justify-between'>
+          <div className='flex flex-col'>
+            <div className='text-lg font-bold'>Activities</div>
+            <div ><Dropdown months = {months} setSelectedMonth = {setSelectedMonth} selectedMonth = {selectedMonth}/></div>
+          </div>
+          <div className='flex h-fit mt-4 mr-3'>
+          <div className='activity-legendl-dots rounded-full mr-3 ' style={{background:"#E9A0A0"}}></div>
             <div className='font-normal text-base mr-8'>User</div>
             <div className='activity-legendl-dots rounded-full mr-3' style={{background:"#9BDD7C"}}></div>
             <div>Guest</div>
-          </span>
-        <ReactEcharts option={option}  />
+            </div>  
+        </div>
+
+        <ReactEcharts option={option} style={{maxHeight:"15rem"}} />
         </Card>
     );
   };

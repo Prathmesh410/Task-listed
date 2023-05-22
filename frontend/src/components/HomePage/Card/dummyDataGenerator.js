@@ -3,8 +3,10 @@ const months = [
     'January', 'February', 'March', 'April', 'May', 'June', 
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
+
 const currentDate = new Date();
 export function generatePieDummyData  () {
+  const colors = ["#98D89E" ,"#EE8484" ,"#F6DC7D"];
     const pieData = [];
     for(let i = 0;i <6;i++){
         let month = currentDate.getMonth()-i;
@@ -18,10 +20,13 @@ export function generatePieDummyData  () {
         let date = {month:months[month] , year : year};
         const topProducts = [];
         for (let j = 0; j < 3; j++) {
-
+            const color = colors[j]; 
             const name = faker.commerce.productName();
+            const words = name.split(' ');
+            const firstTwoWords = words.slice(0, 2).join(' ');
+
             const value = faker.number.int({ min: 0, max: 100 });
-            topProducts.push({ value:value ,name: name });
+            topProducts.push({ color:color, value:value ,name: firstTwoWords });
           }
           pieData.push({ month: date, topProducts });
     }

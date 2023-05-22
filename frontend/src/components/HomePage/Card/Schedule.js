@@ -6,7 +6,7 @@ import { TbMathGreater } from "react-icons/tb";
 import "./Card.css"
 const count = faker.number.int({ min: 2, max: 10 });
 const taskData = generateTaskDummyData(count);
-console.log(taskData);
+// console.log(taskData);
 
 function Schedule() {
   const [isOpen, setIsOpen] = useState(false);
