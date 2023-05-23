@@ -4,3 +4,9 @@
 .sidebar-text{
     font-family: 'Montserrat', sans-serif!important;
 }
+.sidebar-item{
+    transition: transform 0.2s ease-in-out;
+}
+.sidebar-item:hover{
+    transform: scale(1.02);
+}

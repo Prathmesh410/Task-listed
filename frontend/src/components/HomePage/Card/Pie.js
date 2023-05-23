@@ -20,14 +20,14 @@ const PieChart = () => {
 const Legend =() => {
     const array = cur?.topProducts;
   return(
-    <div className='w-1/2 h-40  p-4 pt-0'>
+    <div className='w-1/2 h-40  p-4 pt-0 lg:p-0 '>
       {
         array.map(element => {
          return(
-          <div key = {element.name} className="mb-2">
+          <div key = {element.name} className="mb-3 ">
            <div className="flex items-center" key={element.name}>
             <div className="  legend-icon rounded-full mr-2" style={{backgroundColor:`${element?.color}`}}></div>
-            <div className="text-sm font-semibold">{element?.name}</div>
+            <div className="text-normal font-semibold">{element?.name}</div>
             </div>
             <div className="ml-4 text-sm  text-gray-500">{element?.value}%</div> 
           </div>

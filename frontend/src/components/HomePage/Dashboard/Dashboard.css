@@ -1,3 +1,9 @@
 .infoCardWrapper{
     max-height: 120px;
 }
+.infocard{
+    transition: transform 0.2s ease-in-out;
+}
+.infocard:hover{
+    transform: scale(1.02);
+}

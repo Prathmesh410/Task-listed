@@ -26,9 +26,10 @@ const ActivityChart = () => {
         },
         axisLabel: {
           textStyle: {
+            fontFamily:'Open sans',
             fontStyle: 'normal',
-            fontWeight: 400,
-            fontSize: 14,
+            fontWeight: 500,
+            fontSize: 15,
           },
         }  
       },
@@ -42,9 +43,10 @@ const ActivityChart = () => {
         },
         axisLabel: {
           textStyle: {
+            fontFamily:'Open sans',
             fontStyle: 'normal',
-            fontWeight: 400,
-            fontSize: 14,
+            fontWeight: 500,
+            fontSize: 15,
           },
         }
       },
