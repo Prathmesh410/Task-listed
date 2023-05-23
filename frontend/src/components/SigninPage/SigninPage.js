@@ -9,7 +9,7 @@ function SigninPage() {
       text-6xl font-bold board-logo">
       Board.
     </div>
-    <div className="w-2/3 h-screen flex items-center justify-center bg-gray-100 SigninForm">
+    <div className="w-2/3 h-screen flex items-center justify-center bg-gray-100 SigninForm signinPage-rm-align">
    <Signin />
     </div>
   </div>

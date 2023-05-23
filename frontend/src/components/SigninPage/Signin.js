@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { auth, provider } from "../firebase";
-import { signInWithPopup } from "firebase/auth";
+import { auth, Googleprovider,facebookprovider } from "../firebase";
+import {  signInWithPopup } from "firebase/auth";
 import { FcGoogle } from "react-icons/fc";
-import { GrApple } from "react-icons/gr";
+import { GrFacebook } from "react-icons/gr";
 import SigninForm from "./SigninForm";
 import { useNavigate } from 'react-router-dom';
 function Signin() {
@@ -16,24 +16,32 @@ function Signin() {
 
   useMemo(() => setUser(localStorage.getItem("email"))
   , [])  
-  const handleClick = () => {
-    signInWithPopup(auth, provider).then((data) => {
+  const handleGoogleClick =  () => {
+    signInWithPopup(auth, Googleprovider).then((data) => {
       setUser(data.user.email);
       localStorage.setItem("email", data.user.email);
     });
   };
+ 
+  const handleFacebookClick =  () => {
+    signInWithPopup(auth, facebookprovider).then((data) => {
+      setUser(data.user.email);
+      localStorage.setItem("email", data.user.email);
+    }).catch((error) => {
+      console.log('facebook lognin eror' , error);
+    })
+  };
   const handleResister = (e) =>{
     setRegister(true);
   }
-  // console.log(register);
   return (
-    <div className="max-w-500 ">
+    <div className="max-w-500 signin-margin ">
       <h3 className="font-bold text-4xl leading-11 tracking-wide">{register ? 'Sign up' : 'Sign in'}</h3>
       <p className="font-normal text-base leading-5 mt-1">{register ? 'Sign up ' : 'Sign in '}to your account</p>
-      <div className="flex justify-between mt-6">
+      <div className="flex justify-between mt-6 flex-remover">
         <div className="rounded-xl h-8 w-48 bg-white shadow-sm
-          mr-3 flex items-center justify-center cursor-pointer"
-          onClick={handleClick}
+          mr-3 flex items-center justify-center cursor-pointer loginpotions"
+          onClick={handleGoogleClick}
         >
           <FcGoogle className="text-xl"/>
           <p
@@ -45,13 +53,13 @@ function Signin() {
           </p>
         </div>
         <div
-          className="rounded-xl h-8 w-48 bg-white shadow-sm ml-3 flex items-center justify-center cursor-pointer"
-          onClick={handleClick}
+          className="rounded-xl h-8 w-48 bg-white shadow-sm ml-3 flex items-center justify-center cursor-pointer loginpotions"
+          onClick={handleFacebookClick}
         >
-          <GrApple className="text-lg text-gray-400"/>
+          <GrFacebook className="text-lg text-gray-400"/>
           <p className="bg-white text-gray-400
            hover:text-gray-600 ml-3
-         font-normal text-sm">Sign in with Apple</p>
+         font-normal text-sm">Sign in with Facebook</p>
         </div>
       </div>
         <SigninForm register = {register} setRegister = {setRegister} setUser = {setUser}/>

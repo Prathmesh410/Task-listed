@@ -58,7 +58,7 @@ function SigninForm({register,setRegister,setUser}) {
   return (
 
     <div className=' w-full h-fit bg-white mt-6 flex flex-col items-center
-     justify-center rounded-2xl py-8'>
+     justify-center rounded-2xl py-8 signin-margin'>
       <ToastContainer 
       autoClose={2000}
       hideProgressBar={true}
