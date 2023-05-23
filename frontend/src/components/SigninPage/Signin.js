@@ -5,16 +5,14 @@ import { FcGoogle } from "react-icons/fc";
 import { GrApple } from "react-icons/gr";
 import SigninForm from "./SigninForm";
 import { useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
 function Signin() {
   const [user, setUser] = useState("");
   const [register,setRegister] = useState(false);
   const navigate = useNavigate();
-
-
+  
   useEffect(() => {
     {user !== null? navigate('/') : navigate('/signin')}
-  }, [user]);
+  }, [user,navigate]);
 
   useMemo(() => setUser(localStorage.getItem("email"))
   , [])  
@@ -25,10 +23,9 @@ function Signin() {
     });
   };
   const handleResister = (e) =>{
-   
     setRegister(true);
   }
-  console.log(register);
+  // console.log(register);
   return (
     <div className="max-w-500 ">
       <h3 className="font-bold text-4xl leading-11 tracking-wide">{register ? 'Sign up' : 'Sign in'}</h3>

@@ -43,7 +43,8 @@ function SigninForm({register,setRegister,setUser}) {
       
       signInWithEmailAndPassword(auth, email,password).then((data) => {
         toast("Sign-in successful!")
-      
+        localStorage.setItem("email", data.user.email);
+        console.log("form loc" , localStorage.getItem('email'));
         setUser(data.user.email);
       })
       .catch((error) => {
