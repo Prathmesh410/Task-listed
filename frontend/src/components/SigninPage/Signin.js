@@ -47,7 +47,7 @@ function Signin() {
           <p
             className="bg-white text-gray-400
            hover:text-gray-600 ml-3
-         font-normal "
+         font-normal text-sm"
           >
             Sign in with Google
           </p>
@@ -59,7 +59,7 @@ function Signin() {
           <GrFacebook className="text-lg text-gray-400"/>
           <p className="bg-white text-gray-400
            hover:text-gray-600 ml-3
-         font-normal ">Signin with Facebook</p>
+         font-normal text-sm">Sign in with Facebook</p>
         </div>
       </div>
         <SigninForm register = {register} setRegister = {setRegister} setUser = {setUser}/>
