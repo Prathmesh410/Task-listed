@@ -17,7 +17,7 @@ const Dropdown = ({months,setSelectedMonth ,selectedMonth}) => {
     return (
       <div className="dropdown-container ">
         <button className="dropdown-button text-grey-500" onClick={toggleDropdown}>
-        {months[selectedMonth]}<RiArrowDropDownLine className="dropdown-icon text-grey-500" />
+        {months[selectedMonth]}<RiArrowDropDownLine className="dropdown-icon text-grey-500"  />
         </button>
         {isOpen && (
           <div className="dropdown-menu">
