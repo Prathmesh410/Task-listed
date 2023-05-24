@@ -90,7 +90,7 @@ const ActivityChart = () => {
 
     return (
         <Card >
-        <div className='flex justify-between'>
+        <div className='flex justify-between activity-margin'>
           <div className='flex flex-col'>
             <div className='text-lg font-bold'>Activities</div>
             <div ><Dropdown months = {months} setSelectedMonth = {setSelectedMonth} selectedMonth = {selectedMonth}/></div>

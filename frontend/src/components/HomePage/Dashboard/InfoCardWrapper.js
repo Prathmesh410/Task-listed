@@ -7,9 +7,9 @@ import Infocard4 from "../Icons/Infocard4.svg"
 import "./Dashboard.css"
 function InfoCardWrapper() {
   return (
-    <div className=' h-1/6 flex justify-between infoCardWrapper mt-8'>
-      <InfoCard color= "#DDEFE0" title="Total Revenues" icon ={Infocard1} value="$2,129"/>
-      <InfoCard color= "#F4ECDD" title="Total Transactions" icon ={Infocard2} value="1,520"/>
+    <div className=' flex justify-between infoCardWrapper mt-8'>
+      <InfoCard color= "#DDEFE0" title="Total Revenues" icon ={Infocard1} value="$2,129" className='infocard-margin'/>
+      <InfoCard color= "#F4ECDD" title="Total Transactions" icon ={Infocard2} value="1,520" className='infocard-margin'/>
       <InfoCard color= "#EFDADA" title="Total Likes" icon ={Infocard3} value="9,721"/>
       <InfoCard color= "#DEE0EF" title="Total Users" icon ={Infocard4} value="892"/>
     </div>

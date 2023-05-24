@@ -74,3 +74,8 @@
   .card{
     font-family: 'Montserrat', sans-serif!important;
   }
+  @media (max-width: 800px){
+    .activity-margin{
+      margin-top: 2rem;
+    }
+ }
