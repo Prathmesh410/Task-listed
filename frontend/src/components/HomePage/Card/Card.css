@@ -79,3 +79,16 @@
       margin-top: 2rem;
     }
  }
+  @media (max-width: 500px){
+    .activity-margin {
+      display: block;
+    }
+    .activity-dropdown-flex{
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .activity-legend-flex{
+      margin: auto;
+      justify-content: center;
+    }
+ }

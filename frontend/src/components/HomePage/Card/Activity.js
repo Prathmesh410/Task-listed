@@ -91,11 +91,11 @@ const ActivityChart = () => {
     return (
         <Card >
         <div className='flex justify-between activity-margin'>
-          <div className='flex flex-col'>
+          <div className='flex flex-col activity-dropdown-flex'>
             <div className='text-lg font-bold'>Activities</div>
             <div ><Dropdown months = {months} setSelectedMonth = {setSelectedMonth} selectedMonth = {selectedMonth}/></div>
           </div>
-          <div className='flex h-fit mt-4 mr-3'>
+          <div className='flex h-fit mt-4 mr-3 activity-legend-flex'>
           <div className='activity-legendl-dots rounded-full mr-3 ' style={{background:"#E9A0A0"}}></div>
             <div className='font-normal text-base mr-8'>User</div>
             <div className='activity-legendl-dots rounded-full mr-3' style={{background:"#9BDD7C"}}></div>
