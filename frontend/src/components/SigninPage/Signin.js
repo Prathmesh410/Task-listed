@@ -38,7 +38,7 @@ function Signin() {
     <div className="max-w-500 signin-margin ">
       <h3 className="font-bold text-4xl leading-11 tracking-wide">{register ? 'Sign up' : 'Sign in'}</h3>
       <p className="font-normal text-base leading-5 mt-1">{register ? 'Sign up ' : 'Sign in '}to your account</p>
-      <div className="flex justify-between mt-6 flex-remover">
+      <div className="flex justify-between mt-6 flex-remover loginoptions-container">
         <div className="rounded-xl h-8 w-48 bg-white shadow-sm
           mr-3 flex items-center justify-center cursor-pointer loginpotions"
           onClick={handleGoogleClick}

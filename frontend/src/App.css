@@ -4,7 +4,8 @@
         align-items: center;
     }
     .loginpotions{
-        margin: 0.8rem;
+        margin: auto;
+        margin-bottom: 1rem;
     }
 }
 @media (max-height: 700px){
