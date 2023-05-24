@@ -63,7 +63,7 @@ const option = {
     <Card>
       <div className='flex justify-between pie-title-flex'>
           <div className='text-lg font-bold'> Top Products</ div>
-          <div className='flex mr-7'><Dropdown months = {months} setSelectedMonth = {setSelectedMonth} selectedMonth = {selectedMonth} /></div>
+          <div className=' mr-7'><Dropdown months = {months} setSelectedMonth = {setSelectedMonth} selectedMonth = {selectedMonth} /></div>
          </div>
         <div className='flex  mt-5 pie-flex h-5/6'>
             <ReactEcharts option={option} style={{width:"100%",height:"100%",minHeight:"150px" , maxWidth:"250px"}} className="pie" />

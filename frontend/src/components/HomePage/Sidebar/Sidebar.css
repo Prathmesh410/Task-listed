@@ -27,4 +27,14 @@
     .sidebar-item-center{
         display: none;
     }
+    .sidebar-item:hover{
+        transform: scale(1.05);
+    }
+    /* .sidebar-item {
+        color: black;
+    }
+    .sidebar-item-icon{
+        color:black;
+    } */
+
 }
