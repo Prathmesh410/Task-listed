@@ -20,16 +20,16 @@ const PieChart = () => {
 const Legend =() => {
     const array = cur?.topProducts;
   return(
-    <div className='w-1/2 h-40  p-4 pt-0 lg:p-0 '>
+    <div className='w-1/2 h-40  p-4 pt-0 lg:p-0  pie-legend-container'>
       {
         array.map(element => {
          return(
           <div key = {element.name} className="mb-3 ">
            <div className="flex items-center" key={element.name}>
             <div className="  legend-icon rounded-full mr-2" style={{backgroundColor:`${element?.color}`}}></div>
-            <div className="text-normal font-semibold">{element?.name}</div>
+            <div className="text-normal font-semibold pie-legend-title">{element?.name}</div>
             </div>
-            <div className="ml-4 text-sm  text-gray-500">{element?.value}%</div> 
+            <div className="ml-4 text-sm  text-gray-500 ">{element?.value}%</div> 
           </div>
         )
         })
@@ -61,12 +61,12 @@ const option = {
   };
   return (
     <Card>
-      <div className='flex justify-between'>
+      <div className='flex justify-between pie-title-flex'>
           <div className='text-lg font-bold'> Top Products</ div>
           <div className='flex mr-7'><Dropdown months = {months} setSelectedMonth = {setSelectedMonth} selectedMonth = {selectedMonth} /></div>
          </div>
-        <div className='flex h-40 mt-5'>
-            <ReactEcharts option={option} style={{width:"50%",height:"100%"}} />
+        <div className='flex  mt-5 pie-flex h-5/6'>
+            <ReactEcharts option={option} style={{width:"100%",height:"100%",minHeight:"150px" , maxWidth:"250px"}} className="pie" />
             <Legend/>
         </div>
       </Card>
