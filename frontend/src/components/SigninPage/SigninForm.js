@@ -65,7 +65,7 @@ function SigninForm({register,setRegister,setUser}) {
       className = "ToastContainer"
       />
         <div className='bg-grey w-10/12'> 
-            <p className='w-full h-5 font-normal text-base leading-5'>Email address</p>
+            <p className='w-full h-5 font-normal sm:text-midium text-base leading-5'>Email address</p>
             <input type="email"     
              className="bg-gray-100 border 
                rounded-lg w-full h-10 px-2 mt-2 outline-none" 

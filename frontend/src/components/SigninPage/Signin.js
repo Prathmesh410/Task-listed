@@ -47,7 +47,7 @@ function Signin() {
           <p
             className="bg-white text-gray-400
            hover:text-gray-600 ml-3
-         font-normal text-sm"
+         font-normal "
           >
             Sign in with Google
           </p>
@@ -59,12 +59,12 @@ function Signin() {
           <GrFacebook className="text-lg text-gray-400"/>
           <p className="bg-white text-gray-400
            hover:text-gray-600 ml-3
-         font-normal text-sm">Sign in with Facebook</p>
+         font-normal ">Signin with Facebook</p>
         </div>
       </div>
         <SigninForm register = {register} setRegister = {setRegister} setUser = {setUser}/>
         <div className='flex mt-6 item-center justify-center' > 
-          <p className="font-small text-base leading-5 font-light text-gray-600" > have an account?</p>
+          <p className="font-small text-base leading-5 font-light text-gray-600" >Don't have an account?</p>
           <p className="font-small text-base leading-5 font-light text-blue-600 ml-1 cursor-pointer" onClick={handleResister}>Register here</p>
         </div>
     </div>
